@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Juan diego",
+        "surnames":"Rivas vasquez",
+        "email":"todo@gmail.com",
+        "img": "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
+        "content": "react tailwind",
+        "phone":"123456",
+        "registrationDate":"10/12/2024",
+        "age": "39 Años",
+        "weight": "60 Kg"
+    },
+    {
+        "id": 2,
+        "title": "Pedro",
+        "surnames":"Rios cardenas",
+        "email":"todo@gmail.com",
+        "img": "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
+        "content": "react tailwind",
+        "registrationDate":"10/12/2024",
+        "phone":"123456",
+        "age": "39 Años",
+        "weight": "60 Kg"
+    },
+    {
+        "id": 3,
+        "title": "Diego fernando",
+        "surnames":"Florez mendez",
+        "email":"todo@gmail.com",
+        "img": "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
+        "content": "react tailwind",
+        "phone":"123456",
+        "age": "39 Años",
+        "weight": "60 Kg",
+        "registrationDate":"10/12/2024"
+    },
+    {
+        "id": 4,
+        "title": "Ricardo jose",
+        "surnames":"Perez garcia",
+        "email":"todo@gmail.com",
+        "img": "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
+        "content": "react tailwind",
+        "registrationDate":"10/12/2024",
+        "phone":"123456",
+        "age": "39 Añs",
+        "weight": "60 Kg"
+    },
+    {
+        "id": 5,
+        "title": "Juan sebastian",
+        "surnames":"Dias rengifo",
+        "email":"todo@gmail.com",
+        "registrationDate":"10/12/2024",
+        "phone":"123456",
+        "img": "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
+        "content": "react tailwind",
+        "age": "39 Años",
+        "weight": "60 Kg"
+    }
+]

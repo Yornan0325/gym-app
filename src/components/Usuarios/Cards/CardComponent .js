@@ -1,36 +1,21 @@
-const Card = () => {
-    const posts = [
-        {
-            title: "Jua",
-            img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-            content: "react tailwind",
-            edad: "39",
-            peso: "60"
-        },
-        {
-            title: "Pedro Sanches",
-            img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-            content: "react tailwind  "
-        },
-        {
-            title: "Lorem Ipsu",
-            img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-            content: "react tailwind "
-        },
-        {
-            title: "Poll Cars",
-            img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-            content: "react tailwind"
-        },      {
-            title: "Poll Cars",
-            img: "https://cdn.pixabay.com/photo/2019/12/17/14/43/christmas-4701783__340.png",
-            content: "react tailwind"
-        },
-    ];
+
+import { useState, React } from "react";
+import { useNavigate, generatePath } from 'react-router-dom'
+
+export default function Card({ data }) {
+
+    const navigate = useNavigate();
+
+
+    const [id, setId] = useState();
+    const handleProceed = (e) => {
+        id && navigate(generatePath("/editarusuario/:id", { id }));
+    };
     return (
         <>
             <div class="container flex flex-wrap justify-start ">
-                {posts.map((items, key) => (
+
+                {data?.map((items, key) => (
                     <>
                         <div class="flex rounded-lg w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-full max-w-sm min-w-64  p-2 m-2 flex-col shadow bg-slate-950 overflow-hidden hover:shadow-2xl group rounded-xl transition-all duration-500 transform">
                             <div class="flex gap-4">
@@ -45,17 +30,17 @@ const Card = () => {
                                     <h1 class="text-gray-400">  {items.title}</h1>
                                     <div class="justify-between columns-2  text-xs text-gray-500 dark:text-gray-200 group-hover:opacity-100 opacity-0 transform transition-all delay-300 duration-500">
                                         <div class="flex flex-col items-center justify-around">
-                                        <a href={() => false}>
-                                           Edad: {items.edad}
-                                        </a>
-                                        <a href={() => false}>
-                                           Peso: {items.peso}
-                                        </a>
+                                            <a href={() => false}>
+                                                Edad: {items.edad}
+                                            </a>
+                                            <a href={() => false}>
+                                                Peso: {items.peso}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="absolute group-hover:top-1 delay-300 -top-16 transition-all duration-500 bg-gray-600 dark:bg-gray-100 right-1 rounded-lg">
+                            <div class="absolute group-hover:top-1  -top-16 transition-all duration-500  dark:bg-gray-100 right-1 rounded-lg">
                                 <div class="flex justify-evenly items-center gap-2 p-1 text-2xl text-white dark:text-gray-600">
                                     {/* <svg viewBox="0 0 1024 1024" fill="currentColor" height="1em" width="1em">
                                         <path
@@ -69,11 +54,19 @@ const Card = () => {
                                         <path
                                             d="M480 20c133.333 0 246.667 46.667 340 140s140 206.667 140 340c0 132-46.667 245-140 339S613.333 980 480 980c-132 0-245-47-339-141S0 632 0 500c0-133.333 47-246.667 141-340S348 20 480 20M362 698V386h-96v312h96m-48-352c34.667 0 52-16 52-48s-17.333-48-52-48c-14.667 0-27 4.667-37 14s-15 20.667-15 34c0 32 17.333 48 52 48m404 352V514c0-44-10.333-77.667-31-101s-47.667-35-81-35c-44 0-76 16.667-96 50h-2l-6-42h-84c1.333 18.667 2 52 2 100v212h98V518c0-12 1.333-20 4-24 8-25.333 24.667-38 50-38 32 0 48 22.667 48 68v174h98" />
                                     </svg> */}
-                                    <h6>Editar Perfil</h6>
+                                    {/* <h6>Editar Perfil</h6> */}
+                                    <div class=' '>
+                                        <div class="">
+                                            <button onClick={() => { handleProceed(); setId(items.id) }}
+                                                class="flex p-2.5  rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </button >
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-
 
 
                             {/* <div class="w-auto">
@@ -99,4 +92,3 @@ const Card = () => {
     );
 };
 
-export default Card;

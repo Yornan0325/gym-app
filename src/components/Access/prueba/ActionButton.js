@@ -1,4 +1,4 @@
-export default function FormAction({
+export default function ActionButton({
     handleSubmit,
     type='Button',
     action='submit',

@@ -1,26 +1,38 @@
-import './App.css';
+import React from "react";
+ 
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import SignupPage from './pages/Signup';
+import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
 import HomePage from './pages/Home'
+import MainEdit from "./pages/EditUser/MainEdit"
+import  {ContextProvider}  from './Context/Context'
+// https://medium.com/@kaklotarrahul79/how-to-do-crud-operations-in-reactjs-52a9347954f3
+// https://www.shecodes.io/athena/9359-how-to-read-and-delete-json-data-in-react
+
 
 function App() {
+
   return (
     <div>
       {/* <div className="min-h-full max-w-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          {/* </div> */}
-          {/* </div> */}
-          <Route path="/home" element={<HomePage />} />
-        </Routes>
-      </BrowserRouter>
+      <ContextProvider>
+        <Router>
+
+          <Routes>
+            <Route exact path="/home" element={<HomePage />} />
+
+            <Route exact path="/" element={<LoginPage />} />
+            <Route exact path="/signup" element={<SignUpPage />} />
+            {/* Organiazar este componente con sus respectivas rutas */}
+            <Route exact path="/editar/:routeParams" element={<MainEdit />} />
+
+          </Routes>
+        </Router>
+      </ContextProvider>
     </div>
   );
 }

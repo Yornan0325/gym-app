@@ -1,23 +1,35 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { loginFields } from "../../constants/formFields";
-import FormAction from "./FormAction";
+import ActionButton from "./prueba/ActionButton";
 import FormExtra from "./FormExtra";
-import Input from "./Input";
+import FormInput from "./prueba/FormInput";
 import {useNavigate } from 'react-router-dom'
 
 
 const fields = loginFields;
 
-let fieldsState = {};
-fields.forEach(field => fieldsState[field.id] = '');
+// let fieldsState = {};
+// fields.forEach(field => fieldsState[field.id] = '');
 
 export default function Login() {
     const navigate  = useNavigate();
-    const [loginState, setLoginState] = useState(fieldsState);
+    // const [loginState, setLoginState] = useState(fieldsState);
+    const [fieldsState, setFieldsState] = useState({});
 
     const handleChange = (e) => {
-        setLoginState({ ...loginState, [e.target.id]: e.target.value })
+        setFieldsState({ ...fieldsState, [e.target.id]: e.target.value })
     }
+
+
+    useEffect(() => {
+        const fields = loginFields;
+        const initialFieldsState = {};
+        fields.forEach(field => {
+          initialFieldsState[field.id] = '';
+        });
+        setFieldsState(initialFieldsState);
+      }, []);
+
 
     const handleSubmit = (event) => {
         event.preventDefault ();
@@ -26,7 +38,7 @@ export default function Login() {
         const correo = "123456";
 
         const inputs = fields.map(field =>
-            loginState[field.id] 
+            fieldsState[field.id] 
         )
         const  emails = inputs[0]
         const passwords = inputs[1]
@@ -70,10 +82,10 @@ export default function Login() {
             <div>
                 {
                     fields.map(field =>
-                        <Input
+                        <FormInput
                             key={field.id}
                             handleChange={handleChange}
-                            value={loginState[field.id]}
+                            value={fieldsState[field.id]}
                             labelText={field.labelText}
                             labelFor={field.labelFor}
                             id={field.id}
@@ -89,7 +101,7 @@ export default function Login() {
 
             <FormExtra />
             <div class="flex mt-12 ">
-            <FormAction handleSubmit={handleSubmit} text="Login" />
+            <ActionButton handleSubmit={handleSubmit} text="Login" />
             </div>
            
 

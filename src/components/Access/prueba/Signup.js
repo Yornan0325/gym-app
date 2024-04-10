@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { signupFields } from "../../constants/formFields"
-import FormAction from "./FormAction";
-import Input from "./Input";
+import { signupFields } from "../../../constants/formFields"
+import FormAction from "./ActionButton";
+import InputAction from "./FormInput";
 
 const fields = signupFields;
 let fieldsState = {};
@@ -27,10 +27,10 @@ export default function Signup() {
   return (
     <>
       <form class="mt-12" onSubmit={handleSubmit}>
-
+      
         {
           fields.map(field =>
-            <Input
+            <InputAction
               key={field.id}
               handleChange={handleChange}
               value={signupState[field.id]}

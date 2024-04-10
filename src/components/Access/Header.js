@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 // import IconLogin from "../Icon/Iconlogin"
-import image from "../../image/logo1.PNG"
+ 
 export default function Header({
     heading,
     paragraph,
@@ -9,14 +9,8 @@ export default function Header({
 }) {
     return (
         <div className="mb-8 ">
-            <div className="flex justify-start mb-28 ">
-                <img
-                    alt=""
-                    className="mr-4 h-24 w-24 inline-block  rounded-full border-2 border-white  object-center  p-1 ring-gray-300 dark:ring-gray-500"
-
-                    src={image}
-
-                />
+            <div className="flex justify-start mb-4 ">
+              
              
                
             </div>
