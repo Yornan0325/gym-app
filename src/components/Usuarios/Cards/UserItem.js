@@ -66,10 +66,11 @@ export default function UserItem({ data }) {
                     <li class="flex flex-col items-center justify-around">
                         <div>Rutinas</div>
                     </li>
-
+                    <Link to={`/calendario/${data.id}`}>
                     <li class="flex flex-col items-center justify-around">
                         <div>Calendario</div>
                     </li>
+                    </Link>
                 </ul>
             </div>
 

@@ -76,12 +76,12 @@ export default function Login() {
     //         console.log("Autenticación fallida");
     //     }
     // }
-
+  
     return (
         <form onSubmit={handleSubmit}>
             <div>
                 {
-                    fields.map(field =>
+                    fields?.map(field =>
                         <FormInput
                             key={field.id}
                             handleChange={handleChange}
@@ -93,6 +93,7 @@ export default function Login() {
                             type={field.type}
                             isRequired={field.isRequired}
                             placeholder={field.placeholder}
+                            icon={field.icons}
                         />
 
                     )

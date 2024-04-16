@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 // import IconLogin from "../Icon/Iconlogin"
- 
+
 export default function Header({
     heading,
     paragraph,
@@ -8,13 +8,9 @@ export default function Header({
     linkUrl = "#"
 }) {
     return (
-        <div className="mb-8 ">
-            <div className="flex justify-start mb-4 ">
-              
-             
-               
-            </div>
-            
+        <div className="mb-4 ">
+           
+
             <h2 class="text-center text-white text-3xl font-extrabold  block font-sans  antialiased font-semibold leading-snug tracking-normal">
                 {heading}
             </h2>

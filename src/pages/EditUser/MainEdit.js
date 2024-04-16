@@ -44,6 +44,7 @@ const modal = useModal()
     try {
       const newItems = jsonData.filter((item) => item.id !== userId);
       setJsonData(newItems);
+       
       console.log('Usuario eliminado con exito')
     } catch (error) {
       console.error('Error al eliminar el usuario:', error);

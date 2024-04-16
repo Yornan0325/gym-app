@@ -4,9 +4,9 @@ function useFormSignUp (formObj){
   const [form, setForm] = useState(formObj);
 
   function renderFormInputs  () {
-    return Object.values(form).map((inputObj,index) => {
+    return Object.values(form).map((inputObj) => {
       const { value, label, errorMessage, valid, renderInput } = inputObj;
-      return renderInput(onInputChange, value, valid, errorMessage, label,index);
+      return renderInput(onInputChange, value, valid, errorMessage, label);
     });
   }
 

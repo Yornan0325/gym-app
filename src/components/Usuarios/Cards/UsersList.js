@@ -3,7 +3,7 @@ import UserItem from './UserItem';
 import SearchBar from '../SearchBar';
 import ButtonNewUser from '../ButtonNewUser';
 
-export default function UsersList({ open, jsonData }) {
+export default function UsersList({ modal, jsonData }) {
   const [filterValue, setFilterValue] = useState('');
 
   const filteredUsers = useMemo(() => {
@@ -20,9 +20,14 @@ export default function UsersList({ open, jsonData }) {
 
   return (
     <>
-      <div class="flex justify-between flex-col md:flex-row mx-2">
-        <SearchBar filterValue={filterValue} handleSearch={handleSearch} />
-        <ButtonNewUser open={open}/>
+      <div class="flex justify-between mx-2">
+        <div class="justify-center items-center mr-2">
+          <SearchBar filterValue={filterValue} handleSearch={handleSearch} />
+        </div>
+        <div  >
+          <ButtonNewUser modal={modal} />
+        </div>
+
       </div>
       <hr class="my-2 h-0.5 border-t-0 bg-slate-600 opacity-100 dark:opacity-60" />
       <div class="container flex flex-wrap justify-start ">

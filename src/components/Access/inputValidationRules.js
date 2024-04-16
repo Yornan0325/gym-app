@@ -7,42 +7,41 @@
  * @param {function} validateFunc - validation function
  */
 function createValidationRule(ruleName, errorMessage, validateFunc) {
-    return {
-      name: ruleName,
-      message: errorMessage,
-      validate: validateFunc
-    };
-  }
-  
-  export function requiredRule(inputName) {
-    return createValidationRule(
-      "required",
-      `${inputName} required`,
-      (inputValue, formObj) => inputValue.length !== 0
-    );
-  }
-  
-  export function minLengthRule(inputName, minCharacters) {
-    return createValidationRule(
-      "minLength",
-      `${inputName} debe contener al menos ${minCharacters} caracteres`,
-      (inputValue, formObj) => inputValue.length >= minCharacters
-    );
-  }
-  
-  export function maxLengthRule(inputName, maxCharacters) {
-    return createValidationRule(
-      "minLength",
-      `${inputName} no puede contener más de ${maxCharacters} caracteres`,
-      (inputValue, formObj) => inputValue.length <= maxCharacters
-    );
-  }
-  
-  export function passwordMatchRule() {
-    return createValidationRule(
-      "passwordMatch",
-      `Las contraseñas no coinciden`,
-      (inputValue, formObj) => inputValue === formObj.password.value
-    );
-  }
-  
+  return {
+    name: ruleName,
+    message: errorMessage,
+    validate: validateFunc
+  };
+}
+
+export function requiredRule(inputName) {
+  return createValidationRule(
+    "required",
+    `${inputName}`,
+    (inputValue, formObj) => inputValue.length !== 0
+  );
+}
+
+export function minLengthRule(inputName, minCharacters) {
+  return createValidationRule(
+    "minLength",
+    `${inputName} debe contener al menos ${minCharacters} caracteres`,
+    (inputValue, formObj) => inputValue.length >= minCharacters
+  );
+}
+
+export function maxLengthRule(inputName, maxCharacters) {
+  return createValidationRule(
+    "minLength",
+    `${inputName} no puede contener más de ${maxCharacters} caracteres`,
+    (inputValue, formObj) => inputValue.length <= maxCharacters
+  );
+}
+
+export function passwordMatchRule() {
+  return createValidationRule(
+    "passwordMatch",
+    `Las contraseñas no coinciden`,
+    (inputValue, formObj) => inputValue === formObj.password.value
+  );
+}

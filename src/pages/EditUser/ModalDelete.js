@@ -25,7 +25,7 @@ export default function ModalDelete({close,  isOpen, deleteUser, idUser }) {
                                     
                                 </div>
                                 {/*body*/}
-                                <TiDelete className="mx-auto mb-4 h-20 w-20 text-gray-400 dark:text-gray-200" />
+                                <TiDelete className="mx-auto mb-4 h-20 w-20 text-red-400 dark:text-gray-200" />
                                 <div className="relative p-6 flex-auto">
                                     <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                                         Esta accion eliminará la cuenta de manera definitiva, no se podra recuperar

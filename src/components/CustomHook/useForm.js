@@ -16,15 +16,15 @@ export default function useForm (callback){
     }
 
     const validate = (event, name, value) => {
-        //A function to validate each input values
+        //Una función para validar cada valor de entrada.
         switch (name) {
             case 'username':
                 if(value.length <= 4){
-                    // we will set the error state
+                    // Estado de error
 
                     setErrors({
                         ...errors,
-                        username:'Username atleast have 5 letters'
+                        username:'El nombre de usuario tiene al menos 5 letras.'
                     })
                 }else{
                     // set the error state empty or remove the error for username input
@@ -71,7 +71,6 @@ export default function useForm (callback){
     const handleChange = (event) => {
         //To stop default events
         event.persist();
-
         let name = event.target.name;
         let val = event.target.value;
 

@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import Avatar from "./Avatar"
- 
-
+import Avatar from "../../components/Avatar/Avatar"
+const nameAvatar = "JohaFit"
+const dimentionLogo = "w-12 h-12"
 
 export default function NavBar(props) {
 
@@ -12,13 +12,13 @@ export default function NavBar(props) {
     return (
         <div>
             <nav className="bg-gray-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto px-4 sm:px-6 lg:px-2">
                     <div className="flex items-center justify-between h-16">
-                        <Avatar props={props} />
+                        <Avatar name={nameAvatar} dimention={dimentionLogo} />
                         <div class="flex w-auto items-start ">
                             {/* <!-- Right elements --> */}
                             <div class=" hidden md:block  relative flex items-center">
-                               
+
                                 {/* <!-- Container with two dropdown menus --> */}
                                 <div class="relative"
                                     data-te-dropdown-ref
@@ -50,7 +50,7 @@ export default function NavBar(props) {
                                             1
                                         </span>
                                     </a>
-                              
+
                                     {/* <!-- First dropdown menu --> */}
                                     <ul
                                         class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"

@@ -1,6 +1,7 @@
 import React from "react";
 import InputField from "./InputField";
-
+import Icon from '@mdi/react';
+import { mdiAccount,mdiEmail,mdiLock   } from '@mdi/js';
 import {
   requiredRule,
   minLengthRule,
@@ -16,7 +17,7 @@ import {
  * @param {string} type - input type
  * @param {string} defaultValue - default value for the input
  */
-export default function  formConfig (label, name, type, placeholders, defaultValue = "",  ) {
+export default function formConfig(label, name, type, placeholders,icon, defaultValue = "") {
   return {
     renderInput: (handleChange, value, isValid, error, key) => {
       return (
@@ -30,6 +31,7 @@ export default function  formConfig (label, name, type, placeholders, defaultVal
           value={value}
           handleChange={handleChange}
           errorMessage={error}
+          icon={icon}
         />
       );
     },
@@ -44,32 +46,34 @@ export default function  formConfig (label, name, type, placeholders, defaultVal
 // representación de objeto del formulario de registro
 export const signupFormText = {
   name: {
-    ...formConfig("Nombre y Apellido", "name", "text","Johan Fit",),
-     
+    ...formConfig("Nombre y Apellido", "name", "text", "Johan Fit",<Icon path={mdiAccount} size={1} />),
+
     validationRules: [
-      requiredRule("name"),
-      minLengthRule("name", 10),
-      maxLengthRule("name", 50)
+      requiredRule("El nombre es requerido"),
+      minLengthRule("El nombre", 5),
+      maxLengthRule("El nombre", 50)
     ]
   },
+
   email: {
-    ...formConfig("Correo", "email", "email","johanfit@gmail.com"),
+    ...formConfig("Correo", "email", "email", "johanfit@gmail.com",<Icon path={mdiEmail} size={1} />),
     validationRules: [
-      requiredRule("email"),
-      minLengthRule("email", 10),
-      maxLengthRule("email", 100)
+      requiredRule("El correo es requerido"),
+      minLengthRule("El Correo", 10),
+      maxLengthRule("El Correo", 100)
     ]
   },
+  //Nombre,mensaje,tipo,placeholder
   password: {
-    ...formConfig("Contraseña", "password", "password","****"),
+    ...formConfig("Contraseña", "password", "password", "****",<Icon path={mdiLock} size={1} />),
     validationRules: [
-      requiredRule("password"),
-      minLengthRule("password", 4),
-      maxLengthRule("password", 20)
+      requiredRule("La contraseña es requerida"),
+      minLengthRule("La contrseña", 4),
+      maxLengthRule("La contraseña", 20)
     ]
   },
   confirmPassword: {
-    ...formConfig("Confirma tu contraseña", "confirmPassword", "password","****"),
+    ...formConfig("Confirma tu contraseña", "confirmPassword", "password", "****",<Icon path={mdiLock} size={1} />),
     validationRules: [passwordMatchRule()]
   }
 };
