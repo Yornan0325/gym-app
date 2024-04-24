@@ -8,7 +8,7 @@ import {
 import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
 import HomePage from './pages/Home'
-import MainEdit from "./pages/EditUser/MainEdit"
+import MainEditUser from "./pages/EditUser/MainEditUser"
 import CalendarCard from "./components/CalendarCar/Card";
 import  {ContextProvider}  from './Context/Context'
 // https://medium.com/@kaklotarrahul79/how-to-do-crud-operations-in-reactjs-52a9347954f3
@@ -29,8 +29,7 @@ function App() {
 
             <Route exact path="/" element={<LoginPage />} />
             <Route exact path="/signup" element={<SignUpPage />} />
-            {/* Organiazar este componente con sus respectivas rutas */}
-            <Route exact path="/editar/:routeParams" element={<MainEdit />} />
+            <Route exact path="/editar/:routeParams" element={<MainEditUser />} />
             <Route exact path="/calendario/:routeParams" element={ <CalendarCard />} />
           </Routes>
         </Router>

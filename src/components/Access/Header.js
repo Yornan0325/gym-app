@@ -11,7 +11,7 @@ export default function Header({
         <div className="mb-4 ">
            
 
-            <h2 class="text-center text-white text-3xl font-extrabold  block font-sans  antialiased font-semibold leading-snug tracking-normal">
+            <h2 className="text-center text-white text-3xl font-extrabold  block font-sans  antialiased font-semibold leading-snug tracking-normal">
                 {heading}
             </h2>
 

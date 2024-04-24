@@ -26,7 +26,7 @@ export default function Signup() {
 
   return (
     <>
-      <form class="mt-12" onSubmit={handleSubmit}>
+      <form className="mt-12" onSubmit={handleSubmit}>
       
         {
           fields.map(field =>
@@ -45,7 +45,7 @@ export default function Signup() {
 
           )
         }
-        <div class="flex mt-4">
+        <div className="flex mt-4">
           <FormAction handleSubmit={handleSubmit} text="Signup" />
         </div>
 

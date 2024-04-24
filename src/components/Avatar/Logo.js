@@ -1,13 +1,14 @@
 
-export default function Logo({ dimention }) {
+export default function Logo(props) {
+	const {   dimention } = props;
 	return (
 		<>
 			<svg version="1.1" id="Layer_1"
 				xmlns="http://www.w3.org/2000/svg"
-				className="w-16 h-16 z-10"
+				// className="w-16 h-16 z-10"
 				viewBox="0 0 128 91"
 				enableBackground="new 0 0 128 91"
-				class={dimention}
+				className={dimention + "group-hover:w-24 group-hover:h-24  object-center object-cover rounded-full transition-all duration-500 delay-500 transform"}
 			>
 				<path
 					fill="#FEFDFD"

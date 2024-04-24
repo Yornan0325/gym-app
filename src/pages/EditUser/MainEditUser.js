@@ -5,7 +5,7 @@ import { useContextApps } from "../../Context/Context"
 import { useParams } from 'react-router-dom';
 import useModal from '../../components/CustomHook/useModal';
 
-export default function MainEdit() {
+export default function MainEditUser() {
   const { jsonData, setJsonData } = useContextApps()
   const [userDataforId, setUserDataForId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,6 +20,7 @@ const modal = useModal()
       const response = 'database'
       const data = await response.json();
       setJsonData([...jsonData, data]);
+      console.error('Usuario agregado')
     } catch (error) {
       console.error('Error al agregar el usuario:', error);
     }

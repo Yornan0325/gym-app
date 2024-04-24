@@ -14,7 +14,7 @@ export default function FormExtra(){
         </div>
 
         <div className="text-sm ml-12">
-          <a href={(()=>{})} className="font-medium text-purple-600 hover:text-purple-500">
+          <a href={(()=>false)} className="font-medium text-purple-600 hover:text-purple-500">
           Recuperar contraseña?
           </a>
         </div>

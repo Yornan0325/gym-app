@@ -101,7 +101,7 @@ export default function Login() {
             </div>
 
             <FormExtra />
-            <div class="flex mt-12 ">
+            <div className="flex mt-12 ">
             <ActionButton handleSubmit={handleSubmit} text="Login" />
             </div>
            

@@ -1,11 +1,12 @@
 import { useState, useCallback } from "react";
 
-function useFormSignUp (formObj){
+function useFormSignUp(formObj) {
   const [form, setForm] = useState(formObj);
 
-  function renderFormInputs  () {
+  function renderFormInputs() {
     return Object.values(form).map((inputObj) => {
       const { value, label, errorMessage, valid, renderInput } = inputObj;
+      
       return renderInput(onInputChange, value, valid, errorMessage, label);
     });
   }
@@ -73,5 +74,4 @@ function useFormSignUp (formObj){
   return { renderFormInputs, isFormValid };
 }
 
- 
 export default useFormSignUp;
